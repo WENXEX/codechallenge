@@ -210,6 +210,11 @@ header {
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  .div-gap > a {
+    color: white;
+    text-decoration: none;
+  }
   /*Login*/
 
   .login{

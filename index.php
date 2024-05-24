@@ -51,12 +51,14 @@ $tareas = obtenerTareas($conexion);
     <main class="pddng20">
         <h2 class="Inter-titulos">Tareas</h2>
         <section class="top-bar">
-            <input class="dn1" type="checkbox" name="rasignadas" id="rasignadas" checked>
-            <label class="btn1 asignadas" for="rasignadas" onclick="toggleSection('t-asignadas')">Asignadas</label>
-            <input class="dn2" type="checkbox" name="t-norasignadas" id="t-norasignadas">
-            <label class="btn1 noasignadas" for="t-norasignadas" onclick="toggleSection('t-noasignadas')">No asignadas</label>
+            <a class="asignadas-button" href=""> 
+              Asignadas
+            </a> 
+            <a class="asignadas-button btn-off" href=""> 
+                No asignadas
+              </a> 
         </section>
-        <section class="content t-asignadas active">
+        <section class="content">
             <?php if (!empty($tareas)): ?>
                 <?php foreach ($tareas as $tarea): ?>
                     <div class="div-gap">
