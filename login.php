@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-</head>
-<body>
-<form class="Formulario" method="post" action="verifica.php">
-        <fieldset class="Formu">
-          <div>
-            <label>Nombre:</label>
-            <input type="text" name="nombre" placeholder="Ingresa tu usuario" required>
-          </div>
-
-          <div class="contrasena">
-            <label>Contraseña:</label>
-            <input type="password" name="contrasena" required>
-          </div>
-
-        </fieldset>
-
-        <div class="esotilin">
-            <button class="btn-azul" type="button" onclick="cancelar()">Cancelar</button>
-            <button id="enviar-login" class="btn-azul" type="submit">Aceptar</button>
+</head> 
+  <body class="login">
+    <form class="login-div" method="post" action="verifica.php">
+            <h3>Nombre</h3>
+            <div>
+            <label for="Usuario">
+                Usuario
+                <input type="text" id="Usuario" class="input-style" placeholder="Ingresa tu usuario">
+            </label>
+            <label for="Contraseña">
+                Contraseña
+                <input type="" id="Contraseña" class="input-style" placeholder="Contraseña">
+            </label>
         </div>
-      </form>    
-
+        <button class="btn-azul">Entrar</button>
+    </form>
 </body>
 </html>
