@@ -140,8 +140,76 @@ header {
     bottom: 0;
   }
 
+  .asignadas-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DE1337;
+    border: none;
+    color: white;
+    text-decoration: none;
+    height: 33px;
+    width: 8em;
+    svg {
+      aspect-ratio: 1/1;
+      height: 28px;
+      width: 28px;
+      fill: #e5e5e5;
+    }
+  }
+  
+  .asignadas-button:hover {
+    background: #f50626;
+    scale: 1.1;
+    transition: ease-in-out .2s;
+    svg {
+      fill: #e6223c;
+    }
+  }
+  .asignadas-button:active {
+    background: #ff0000;
+    svg {
+      fill: #e5e5e5;
+    }
+  }
+  
+  .details-filtro {
+    height: 35px;
+  }
+  .summary-filtro {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .summary-filtro::before {
+    content: '';
+    width: 20px;
+    height: 50%;
+    background: url("Recursos/MaterialSymbolsFilterAlt.svg") no-repeat; 
+    background-size: cover;
+    transition: 0.2s;
+  }
+  
+  
+  .top-bar{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+  }
 
 
+  .btn-off {
+    background: rgb(168, 21, 21);
+  }
+
+
+  .index-lista {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   /*Login*/
 
   .login{
@@ -226,13 +294,6 @@ header {
   margin: 5px;
 }
 
-.content {
-  display: none;
-}
-
-.content .active {
-  display: block;
-}
     h2 {
       text-align: center;
     }

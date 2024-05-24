@@ -17,10 +17,10 @@
         <div class="index-lista">
             <h2 class="Inter-titulos ">Lista general de tareas</h2>
         <section class="top-bar">
-            <a class="asignadas-button" href=""> 
+            <a class="asignadas-button btn-off" href=""> 
               Asignadas
             </a> 
-            <a class="asignadas-button btn-off" href=""> 
+            <a class="asignadas-button " href=""> 
                 No asignadas
               </a> 
             </section>
