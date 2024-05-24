@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script></script>
     <title>Document</title>
 </head>
+
 <body>
-    <main>   
+    <main>
         <h1>Atención de Incidencias</h1>
         <section class="contenedor">
             <div name="CuadroIncidencia">
-                <form id="Incidencia" method="post" action="RegistrarIncidencia.php" onsubmit="return validarFormulario()" class="form-Incidencias">
-                    <h2 class="Inter-titulos">Agregar incidencias</h2>    
-                <fieldset>
+                <form id="Incidencia" method="post" action="" class="form-Incidencias">
+                    <h2 class="Inter-titulos">Agregar incidencias</h2>
+                    <fieldset>
                         <label for="titulo">Título:</label>
-                        <input class="input-style" type="text" id="titulo" name="titulo" placeholder="Título de la incidencia" required>
+                        <input class="input-style" type="text" id="titulo" name="titulo"
+                            placeholder="Título de la incidencia" required>
                     </fieldset>
                     <fieldset>
                         <label for="descripcion">Descripción:</label>
-                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
+                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50"
+                            placeholder="Descripción de la incidencia" required></textarea>
                     </fieldset>
                     <fieldset>
                         <label>Evidencia:</label>
                         <input type="file" name="archivo" accept=".pdf" required>
                     </fieldset>
-
                     <div class="esotilin">
                         <button class="btn-azul" type="submit">Cancelar</button>
                         <button class="btn-azul" type="submit">Aceptar</button>
-                    </div>                                    
-                    
+                    </div>             
                 </form>
-            </div>  
-        </section>  
+            </div>
+        </section>
     </main>
 </body>
+
 </html>
