@@ -35,66 +35,110 @@ $tareas = obtenerTareas($conexion);
     <title>Document</title>
 </head>
 <body>
-<header>
-    <h1 class="Mono-titulos">WorkFlow</h1>
-    <div>
-        <?php
-        if (isset($_SESSION['nombre'])) {
-            $usuarioActivo = $_SESSION['nombre'];
-            echo "<a href='src/php/Administrar.php' class='RFlex gap20'>Administrar</a>";
-            echo "<a href='cerrarsesion.php' class='RFlex'>Cerrar sesión</a>";
-        } else {
-            echo "<a href='login.php' class='RFlex'>Iniciar sesión</a>";
-        }
-        ?>
-    </div>
-</header>
-<main class="pddng20">
-    <h2 class="Inter-titulos">Tareas</h2>
-    <section class="top-bar">
-        <input class="dn1" type="checkbox" name="rasignadas" id="rasignadas" checked>
-        <label class="btn1 asignadas" for="rasignadas" onclick="toggleSection('t-asignadas')">Asignadas</label>
-        <input class="dn2" type="checkbox" name="t-norasignadas" id="t-norasignadas">
-        <label class="btn1 noasignadas" for="t-norasignadas" onclick="toggleSection('t-noasignadas')">No asignadas</label>
-    </section>
-    <section class="content t-asignadas active">
-        <table>
-            <thead>
-                <tr>
-                    <th>Estado</th>
-                    <th>Título</th>
-                    <th>Fecha</th>
-                    <th>Coordinador</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($tareas as $tarea): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($tarea['estado']); ?></td>
-                    <td><?php echo htmlspecialchars($tarea['titulo']); ?></td>
-                    <td><?php echo htmlspecialchars($tarea['fecha']); ?></td>
-                    <td><?php echo htmlspecialchars($tarea['coordinador']); ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </section>
-    <section class="content t-noasignadas">
-        <table>
-            <thead>
-                <tr>
-                    <th>Estado</th>
-                    <th>Título</th>
-                    <th>Fecha</th>
-                    <th>Coordinador</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aquí irían las tareas no asignadas, si es que tienes una distinción -->
-            </tbody>
-        </table>
-    </section>
-</main>
-<script src="script.js"></script>
+    <header>
+        <h1 class="Mono-titulos">WorkFlow</h1>
+        <div >
+<<<<<<< HEAD
+            <a href='' class='RFlex'>Iniciar sesion</a>          
+=======
+<<<<<<< HEAD
+
+            <?php 
+                if (isset($_SESSION['Nombre'])) {
+                    echo "<a href='src/php/Administrar.php' class='RFlex gap20'> Administrar</a>";
+                    echo "<a href='cerrarsesion.php' class='RFlex'>Cerrar sesión</a>";
+                    
+                } else {
+                    echo "<a href='login.php' class='RFlex'>Iniciar sesion</a>";
+                }
+            ?>            
+=======
+            <?php
+            session_start();
+            if (isset($_SESSION['Nombre'])) {
+                $usuarioActivo = $_SESSION['Nombre'];
+            
+                echo "<a href='src/php/Administrar.php' class='RFlex gap20'> Administrar</a>";
+                echo "<a href='cerrarsesion.php' class='RFlex'>Cerrar sesión</a>";
+            } else {
+              
+                echo "<a href='login.php' class='RFlex'>Iniciar sesion</a>";
+                
+            }
+            ?>
+                      
+>>>>>>> 4c2c56ca11eea8fd424e192c11150d6eddcef766
+>>>>>>> 30e660b2631f1d5177324165c00ac9ba3e5a5715
+        </div>
+    </header> 
+    <main>
+        <div class="index-lista">
+            <h2 class="Inter-titulos ">Lista general de tareas</h2>
+        <section class="top-bar">
+            <a class="asignadas-button" href=""> 
+              Asignadas
+            </a> 
+            <a class="asignadas-button btn-off" href=""> 
+                No asignadas
+<<<<<<< HEAD
+              </a> 
+            </section>
+        <section class="content">
+          <div class="div-gap">
+            <span class="Roboto-Flex-regular padding-text">Estado</span>
+          </div>
+          <div class="div-gap">
+            <span class="Roboto-Flex-regular padding-text">Titulo</span>
+            <span class="gray-separator"></span></div>
+          <div class="div-gap">
+            <span class="Roboto-Flex-regular padding-text">Fecha </span>
+            <span class="gray-separator"></span>
+          </div>
+          <div class="div-gap">
+            <span class="Roboto-Flex-regular padding-text">Coordinador </span>
+            <span class="gray-separator"></span>
+          </div>
+          </section>
+        </div>
+          
+=======
+            </label> 
+        </section>
+        <section class="content t-asignadas active">
+            <div class="div-gap">
+                <label class="Roboto-Flex-regular">Estado</label>  
+            </div>
+            <div class="div-gap">
+                <div class="Roboto-Flex-regular padding-text">Título</div>
+                <span class="separador"></span>
+            </div>
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Fecha</span>
+                <span class="separador"></span>
+            </div>
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Coordinador</span>
+                <span class="separador"></span>
+            </div>
+        </section>
+        <section class="content t-noasignadas">
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Estado</span>  
+            </div>
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Título</span>
+                <span class="separador"></span>
+            </div>
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Fecha</span>
+                <span class="separador"></span>
+            </div>
+            <div class="div-gap">
+                <span class="Roboto-Flex-regular padding-text">Coordinador</span>
+                <span class="separador"></span>
+            </div>
+        </section>
+>>>>>>> 30e660b2631f1d5177324165c00ac9ba3e5a5715
+    </main>
 </body>
 </html>
