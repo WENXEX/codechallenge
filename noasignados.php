@@ -39,6 +39,26 @@
             <span class="Roboto-Flex-regular padding-text">Coordinador </span>
             <span class="gray-separator"></span>
           </div>
+          <?php 
+            echo '<div class="div-gap">';
+            echo '  <span class="Roboto-Flex-regular padding-text">'.$estado.'</span>';
+            echo '</div>';
+            
+            echo '<div class="div-gap">';
+            echo '  <span class="Roboto-Flex-regular padding-text">'.$titulo.'</span>';
+            echo '  <span class="gray-separator"></span>';
+            echo '</div>';
+            
+            echo '<div class="div-gap">';
+            echo '  <span class="Roboto-Flex-regular padding-text">'.$fecha.'</span>';
+            echo '  <span class="gray-separator"></span>';
+            echo '</div>';
+            
+            echo '<div class="div-gap">';
+            echo '  <span class="Roboto-Flex-regular padding-text">'.$coordinador.'</span>';
+            echo '  <span class="gray-separator"></span>';
+            echo '</div>';
+          ?>
           </section>
         </div>
           
