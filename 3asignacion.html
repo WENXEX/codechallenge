@@ -19,11 +19,16 @@
                     </fieldset>
                     <fieldset>
                         <label for="descripcion">Descripción:</label>
-                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
+                        <textarea class="textarea-estilos input-style" id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
                     </fieldset>
                     <fieldset>
-                        <label>Foto de usuario:</label>
-                        <input type="file" name="archivo" accept=".pdf" required>
+                        <label for="opciones">Selecciona una opción:</label>
+                        
+                        <label for="Nombre">Asignar: </label>
+                        <select id="Nombre" name="Nombre" required>
+                            <option value="null"></option>';        
+                            <option value="' . htmlspecialchars($nombre) . '">' . htmlspecialchars($nombre) . '</option>
+                        </select>
                     </fieldset>
                     <fieldset>
                         <button type="submit">Cancelar</button>
