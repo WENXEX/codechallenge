@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $db_username = "root";
-$db_password = "gato";
+$db_password = "admin";
 $db_name = "proyectoworkflow";
 
 try {

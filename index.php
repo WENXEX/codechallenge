@@ -10,7 +10,7 @@
 <header>
         <h1 class="Mono-titulos">WorkFlow</h1>
         <div >
-            <?php?>
+
             <?php 
                 if (isset($_SESSION['Nombre'])) {
                     echo "<a href='src/php/Administrar.php' class='RFlex gap20'> Administrar</a>";
