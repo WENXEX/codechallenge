@@ -1,6 +1,7 @@
 <?php
+require 'db_connection.php';
 
-require ("src/php/db_connection.php");
+require_once 'db_connection.php';
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,14 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecutar la sentencia
         $stmt->execute();
         
-        // Redireccionar o mostrar un mensaje de éxito
-        // Por ejemplo:
-        // header("Location: incidencias.php");
-        // exit();
-        echo "La incidencia se ha agregado correctamente.";
+        // Establecer la respuesta como éxito
+        $response['success'] = true;
+        $response['message'] = "La incidencia se ha agregado correctamente.";
     } catch (PDOException $e) {
         // Manejar errores de la base de datos
-        echo "Error al insertar la incidencia: " . $e->getMessage();
+        $response['success'] = false;
+        $response['error'] = "Error al insertar la incidencia: " . $e->getMessage();
     }
 }
+
+// Devolver la respuesta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
