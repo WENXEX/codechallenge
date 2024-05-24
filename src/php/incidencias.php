@@ -2,11 +2,7 @@
 include 'db_connection.php';
 try {
     
-        $sql = "SELECT p.*, c.nombre, c.total 
-            FROM revision c 
-            INNER JOIN incidencias p 
-            ON c.id_incidencia = p.id 
-            WHERE c.coordinador = :id";
+        $sql = "SELECT i.*, r.descripcion FROM revisiones r INNER JOIN incidencias i ON r.id_incidencia = i.id WHERE r.id_coordinador = :id";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':id', $usuario_id);
         $stmt->execute();
