@@ -10,6 +10,7 @@
 <header>
         <h1 class="Mono-titulos">WorkFlow</h1>
         <div >
+<<<<<<< HEAD
 
             <?php 
                 if (isset($_SESSION['Nombre'])) {
@@ -20,6 +21,22 @@
                     echo "<a href='login.php' class='RFlex'>Iniciar sesion</a>";
                 }
             ?>            
+=======
+            <?php
+            session_start();
+            if (isset($_SESSION['Nombre'])) {
+                $usuarioActivo = $_SESSION['Nombre'];
+            
+                echo "<a href='src/php/Administrar.php' class='RFlex gap20'> Administrar</a>";
+                echo "<a href='cerrarsesion.php' class='RFlex'>Cerrar sesión</a>";
+            } else {
+              
+                echo "<a href='login.php' class='RFlex'>Iniciar sesion</a>";
+                
+            }
+            ?>
+                      
+>>>>>>> 4c2c56ca11eea8fd424e192c11150d6eddcef766
         </div>
     </header> 
     <main class="pddng20">
@@ -36,10 +53,10 @@
         </section>
         <section class="content t-asignadas active">
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Estado</span>  
+                <label class="Roboto-Flex-regular">Estado</label>  
             </div>
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Título</span>
+                <div class="Roboto-Flex-regular padding-text">Título</div>
                 <span class="separador"></span>
             </div>
             <div class="div-gap">
