@@ -233,3 +233,27 @@ header {
       flex-direction: column;
     }
   }
+
+  .contenedor {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px black solid;
+    width: 70%;
+    border-radius: 20px;
+  }
+
+  .textarea-estilos {
+    width: 100%;
+    max-width: 810px;
+    min-height: 30px;
+    field-sizing: content;
+    max-height: 300px;
+    font-family: "Roboto Flex";
+    border: none;
+    border-bottom: 1px #DDDDDD solid;
+  }
+
+ textarea:focus {
+  outline: none;
+  border-bottom: 1px #14213d solid;
+  }
