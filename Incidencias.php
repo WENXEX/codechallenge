@@ -51,7 +51,7 @@ try {
                 var formData = new FormData();
                 formData.append("Titulo", titulo);
                 formData.append("Descripcion", descripcion);
-                formData.append("Coordinador", coordinador);
+                formData.append("Coordinador", coordinador); 
 
                 <?php
                 
