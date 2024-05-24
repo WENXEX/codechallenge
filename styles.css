@@ -9,7 +9,6 @@
 body {
     margin: 0;
     font-family: "Roboto Flex", sans-serif;
-    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -73,9 +72,6 @@ header {
 
 }
 
-.gap20 {
-  margin-left: 20px;
-}
 
 /* Botonos tarea asignadas*/
 .top-bar{
@@ -146,8 +142,6 @@ header {
 
 
 
-
-
   /*Login*/
 
   .login{
@@ -183,11 +177,12 @@ header {
   
   .btn-azul{
     background: #3076e0;
-    color: #DDDDDD;
+    color: #ffffff;
     height: 40px;
     width: 100px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
   }
   .btn-azul:hover {
     background: #244584;
@@ -215,15 +210,29 @@ header {
     padding: 20px;
   }
 
-  /* Form Incidencias*/
-
-  .form-Incidencias {
-    margin: 0 auto;
-    width: 80%;
-    max-width: 1200px;
-    
 
 
+
+ /* Agrega tu estilo aquí */
+.dn1, .dn2 {
+  display: none;
+}
+
+.btn1 {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
     h2 {
       text-align: center;
     }
@@ -233,7 +242,6 @@ header {
       flex-direction: column;
       margin: 30px 0;
     }
-  }
 
   .contenedor {
     margin: 0 auto;
@@ -263,4 +271,10 @@ header {
   .esotilin {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
   }
+
+option {
+  height: 4rem;
+}

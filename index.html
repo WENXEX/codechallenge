@@ -9,31 +9,26 @@
 <body>
     <header>
         <h1 class="Mono-titulos">WorkFlow</h1>
-        <div >
-            <a href="" class="RFlex">Iniciar sesion</a>
-            <a href="" class="RFlex gap20"> Administrar</a>
-        </div>
-    </header> 
+        <a href="" class="RFlex">Iniciar sesión</a>
+    </header>
     <main class="pddng20">
         <h2 class="Inter-titulos">Tareas</h2>
-        <section class="top-bar" >
-            <input class="dn1" type="checkbox" name="rasignadas" checked="checked">
-            <label class="btn1 asignadas" for="rasignadas"> 
-              Asignadas
+        <section class="top-bar">
+            <input class="dn1" type="checkbox" name="rasignadas" id="rasignadas" checked>
+            <label class="btn1 asignadas" for="rasignadas" onclick="toggleSection('t-asignadas')"> 
+                Asignadas
             </label> 
-            <input class="dn2" type="checkbox" name="t-norasignadas" >
-            <label class="btn1 noasignadas" for="t-norasignadas"> 
+            <input class="dn2" type="checkbox" name="t-norasignadas" id="t-norasignadas">
+            <label class="btn1 noasignadas" for="t-norasignadas" onclick="toggleSection('t-noasignadas')"> 
                 No asignadas
             </label> 
-
         </section>
-
-        <section class="content t-asignadas">
+        <section class="content t-asignadas active">
             <div class="div-gap">
                 <span class="Roboto-Flex-regular padding-text">Estado</span>  
             </div>
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Titulo</span>
+                <span class="Roboto-Flex-regular padding-text">Título</span>
                 <span class="separador"></span>
             </div>
             <div class="div-gap">
@@ -41,17 +36,16 @@
                 <span class="separador"></span>
             </div>
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Cordinador</span>
+                <span class="Roboto-Flex-regular padding-text">Coordinador</span>
                 <span class="separador"></span>
             </div>
         </section>
-
         <section class="content t-noasignadas">
             <div class="div-gap">
                 <span class="Roboto-Flex-regular padding-text">Estado</span>  
             </div>
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Titulo</span>
+                <span class="Roboto-Flex-regular padding-text">Título</span>
                 <span class="separador"></span>
             </div>
             <div class="div-gap">
@@ -59,10 +53,11 @@
                 <span class="separador"></span>
             </div>
             <div class="div-gap">
-                <span class="Roboto-Flex-regular padding-text">Cordinador</span>
+                <span class="Roboto-Flex-regular padding-text">Coordinador</span>
                 <span class="separador"></span>
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

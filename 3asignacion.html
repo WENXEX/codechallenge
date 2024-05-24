@@ -25,15 +25,15 @@
                         <label for="opciones">Selecciona una opción:</label>
                         
                         <label for="Nombre">Asignar: </label>
-                        <select id="Nombre" name="Nombre" required>
-                            <option value="null"></option>';        
+                        <select class="option-style" id="Nombre" name="Nombre" required>
+                            <option  value="null"></option>';        
                             <option value="' . htmlspecialchars($nombre) . '">' . htmlspecialchars($nombre) . '</option>
                         </select>
                     </fieldset>
 
                     <div class="esotilin">
                         <button class="btn-azul" type="submit">Cancelar</button>
-                        <button class="btn-azul type="submit">Aceptar</button>
+                        <button class="btn-azul" type="submit">Aceptar</button>
                     </div>                                    
                     
                 </form>
