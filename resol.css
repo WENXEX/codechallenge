@@ -1,0 +1,229 @@
+.container {
+    width: 100%;
+    max-width: 1920px;
+    height: 1760px;
+    background: white;
+    position: relative;
+}
+
+.Rectangle23 {
+    width: 1920px;
+    height: 127px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #32213A;
+}
+
+.Workflow {
+    left: 73px;
+    top: 43px;
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    font-family: Roboto Mono;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.CerrarSesion {
+    width: 127px;
+    height: 24px;
+    left: 1772px;
+    top: 43px;
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-family: Roboto Mono;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.IniciarSesion {
+    right: 15px;
+    top: 50px;
+    width: 127px;
+    height: 24px;
+    left: 1772px;
+    top: 67px;
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    font-family: Roboto Mono;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Rectangle27 {
+    width: 1032px;
+    height: 1223px;
+    left: 444px;
+    top: 268px;
+    position: absolute;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px #6E6E6E solid;
+}
+
+.Descrpcion {
+    left: 479px;
+    top: 308px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 31.20px;
+    word-wrap: break-word;
+}
+
+.UltimaDescrpcionDeLaSolucion {
+    left: 479px;
+    top: 459px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 31.20px;
+    word-wrap: break-word;
+}
+
+.ListaDeSoluciones {
+    width: 594px;
+    left: 479px;
+    top: 1004px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 31.20px;
+    word-wrap: break-word;
+}
+
+.ResoluciNDeLaRevision {
+    left: 479px;
+    top: 643px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 31.20px;
+    word-wrap: break-word;
+}
+
+.TipoDeDocumentoInventadotipoDeDocumentoInventadotipoDeDocumentoInventadotipoDeDocumentoInventadotipoDeDocumentoInventadotipoDeDocumentoInventadotipoDeDocumentoInventado {
+    width: 857px;
+    left: 479px;
+    top: 345px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto Flex;
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.TipoDeDocumentoInventadoTipoDeDocumentoInventadoTipoDeDocumentoInventadoTipoDe {
+    width: 701px;
+    left: 741px;
+    top: 1094px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto Flex;
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.Nombre1 {
+    width: 606px;
+    left: 741px;
+    top: 1060px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto Flex;
+    font-weight: 600;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.Nombre2 {
+    width: 606px;
+    left: 741px;
+    top: 1182px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto Flex;
+    font-weight: 600;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.Mayo20241442 {
+    left: 473px;
+    top: 1088px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto Flex;
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.Rectangle26 {
+    width: 963px;
+    height: 241px;
+    left: 479px;
+    top: 700px;
+    position: absolute;
+    background: #FBFBFB;
+    border: 1px black solid;
+}
+
+.Frame1171274963 {
+    width: 375px;
+    height: 46px;
+    left: 444px;
+    top: 183px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-flex;
+}
+
+.ResoluciNIncidencia {
+    color: #463B40;
+    font-size: 35px;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 45.85px;
+    word-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Agregar estilos responsivos aquí */
+    .container {
+        /* Por ejemplo, cambiar el ancho máximo */
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Estilos adicionales para dispositivos más pequeños */
+}
