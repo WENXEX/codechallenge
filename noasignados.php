@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
+    <style>
+        /* Agrega estilos personalizados para posicionar el botón */
+        .div-gap {
+            display: flex;
+            justify-content: space-between; /* Para centrar horizontalmente */
+        }
+        .btn-asignar {
+            margin-left: auto; /* Para mover el botón al lado derecho */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,14 +52,13 @@
                         insidencias.titulo, 
                         insidencias.descripcion, 
                         insidencias.fecha, 
-                        estados.estados AS estado, 
-                        usuarios.nombre AS coordinador
+                        estados.estados AS estado
                     FROM 
                         insidencias
                     JOIN 
                         estados ON insidencias.id_estado = estados.id
-                    JOIN 
-                        usuarios ON insidencias.id_usuario = usuarios.id";
+                    WHERE 
+                        insidencias.id_usuario IS NULL";
 
                 $statement = $conexion->prepare($sql);
                 $statement->execute();
@@ -75,12 +84,8 @@
                         <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
                             <?php echo htmlspecialchars($tarea['fecha']); ?>
                         </a>
-                        <span class="gray-separator"></span>
-                    </div>
-                    <div class="div-gap">
-                        <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
-                            <?php echo htmlspecialchars($tarea['coordinador']); ?>
-                        </a>
+                        <!-- Modificación: Agrega un botón "Asignar" -->
+                        <button class="btn-asignar" onclick="window.open('asignar.php?id=<?php echo htmlspecialchars($tarea['id']); ?>', '_blank')">Asignar</button>
                         <span class="gray-separator"></span>
                     </div>
                 <?php endforeach; ?>
