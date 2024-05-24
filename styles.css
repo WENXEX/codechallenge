@@ -142,8 +142,6 @@ header {
 
 
 
-
-
   /*Login*/
 
   .login{
@@ -179,11 +177,12 @@ header {
   
   .btn-azul{
     background: #3076e0;
-    color: #DDDDDD;
+    color: #ffffff;
     height: 40px;
     width: 100px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
   }
   .btn-azul:hover {
     background: #244584;
@@ -214,6 +213,10 @@ header {
 
 
 
+<<<<<<< HEAD
+=======
+ /* Agrega tu estilo aquí */
+>>>>>>> f9f1a43adc407bef2757c181684e399cf5080fe5
 .dn1, .dn2 {
   display: none;
 }
@@ -240,6 +243,7 @@ header {
       border: none;
       display: flex;
       flex-direction: column;
+      margin: 30px 0;
     }
 
   .contenedor {
@@ -248,12 +252,13 @@ header {
     border: 1px black solid;
     width: 70%;
     border-radius: 20px;
+    max-width: 850px;
   }
 
   .textarea-estilos {
     width: 100%;
     max-width: 810px;
-    min-height: 30px;
+    min-height: 40px;
     field-sizing: content;
     max-height: 300px;
     font-family: "Roboto Flex";
@@ -264,4 +269,32 @@ header {
  textarea:focus {
     outline: none;
     border-bottom: 1px #14213d solid;
+<<<<<<< HEAD
   }
+=======
+  }
+
+  .esotilin {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2%;
+  }
+
+  .option-style {
+  height: 1.7rem;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+td {
+  padding: 10px;
+}
+tr {
+  border-bottom: 1px solid #ccc;
+}
+>>>>>>> f9f1a43adc407bef2757c181684e399cf5080fe5
