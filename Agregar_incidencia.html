@@ -18,26 +18,53 @@
                     <h2 class="Inter-titulos">Agregar incidencias</h2>
                     <fieldset>
                         <label for="titulo">Título:</label>
-                        <input class="input-style" type="text" id="titulo" name="titulo"
-                            placeholder="Título de la incidencia" required>
+                        <input class="input-style" type="text" id="titulo" name="titulo" placeholder="Título de la incidencia" required>
                     </fieldset>
                     <fieldset>
                         <label for="descripcion">Descripción:</label>
-                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50"
-                            placeholder="Descripción de la incidencia" required></textarea>
+                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
                     </fieldset>
                     <fieldset>
                         <label>Evidencia:</label>
                         <input type="file" name="archivo" accept=".pdf">
                     </fieldset>
                     <div class="esotilin">
-                        <button  class="btn-azul" type="submit">Cancelar</button>
+                        <button class="btn-azul" type="button" onclick="cancelar()">Cancelar</button>
                         <button id="enviar-incidencia" class="btn-azul" type="submit">Aceptar</button>
-                    </div>             
+                    </div>
                 </form>
             </div>
         </section>
     </main>
 </body>
+<script>
+    document.getElementById('Incidencia').addEventListener('submit', function(event) {
+        event.preventDefault();
 
+        const form = document.getElementById('Incidencia');
+        const formData = new FormData(form);
+
+        fetch('src/php/RegistrarIncidencia.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Incidencia registrada exitosamente');
+            } else {
+                alert('Error al registrar la incidencia');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al registrar la incidencia');
+        });
+    });
+
+    function cancelar() {
+        // Implementar lógica para el botón cancelar si es necesario
+        alert('Cancelado');
+    }
+</script>
 </html>
