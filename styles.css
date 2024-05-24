@@ -278,3 +278,16 @@ header {
   .option-style {
   height: 1.7rem;
 }
+
+table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+td {
+  padding: 10px;
+}
+tr {
+  border-bottom: 1px solid #ccc;
+}
