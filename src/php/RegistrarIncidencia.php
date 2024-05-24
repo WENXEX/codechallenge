@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Genera un nuevo nombre de archivo para evitar colisiones
         $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
 
-        $uploadFileDir = '/public';
+        $uploadFileDir = 'public';
         $dest_path = $uploadFileDir . $newFileName;
 
         // Depuración: verifica que el directorio de destino exista y sea escribible
