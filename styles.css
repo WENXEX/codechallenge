@@ -110,7 +110,6 @@ header {
     justify-items: center;
     width: 100%;
     border: 1px #4E4E4E solid;
-    max-height: 35px;
     font-size: 1.2em;
   }
   
@@ -122,6 +121,7 @@ header {
     position: relative;
     justify-items: start;
     padding-left: 10px;
+    border-bottom: 1px black solid;
   }
   
   .padding-text {
@@ -230,7 +230,7 @@ header {
   display: none;
 }
 
-.content.active {
+.content .active {
   display: block;
 }
     h2 {
@@ -290,4 +290,29 @@ td {
 }
 tr {
   border-bottom: 1px solid #ccc;
+}
+
+.conten {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  width: 100%;
+  border: 1px #4E4E4E solid;
+  max-width: 1000px;
+}
+
+.padding-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  padding: 5px 0;
+}
+.gray-separator{
+  border: 1px #CAC3C6 solid; 
+  height: 7px;
+  width: 1px;
+  position: absolute;
+  bottom: 0;
 }
