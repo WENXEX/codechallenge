@@ -14,24 +14,17 @@
 
         
         <?php require ('conexion.php');
-                $sql = "SELECT Nombre FROM coordinador";
+                $sql = "SELECT Nombre FROM coordinadores";
                 $result = $conexion->query($sql);
-                // Verificar si hay resultados
+                
                 if ($result->rowCount() > 0) {
                     echo '<label for="Nombre">Asignar: </label>';
                     echo '<select id="Nombre" name="Nombre" required>';
-                    echo '<option value="null"></option>'; // Obtener las horas reservadas
-                    $reservas = array();
-                    while ($row = $reservasQuery->fetch(PDO::FETCH_ASSOC)) {
-                        $reservas[] = $row['hora_reserva'];
-                    }// Generar opciones desde la base de datos, excluyendo las horas reservadas
+                    echo '<option value="null"></option>'; 
                     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                        $hora = $row['hora'];
-                        if (!in_array($hora, $reservas)) {
-                            echo '<option value="' . $hora . '">' . $hora . '</option>';
-                        }
+                        $nombre = $row['nombre'];
+                        echo '<option value="' . $nombre . '</option>';
                     }
-  
                     echo '</select>';}?>
 
 

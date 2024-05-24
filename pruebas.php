@@ -73,3 +73,26 @@
     </form>
 </body>
 </html>
+
+<?php
+// Datos originales
+$datos_originales = "Hola, mundo";
+
+// Generar hash utilizando el algoritmo SHA-256
+$hash = hash('sha256', $datos_originales);
+
+echo "Hash generado: $hash <br>";
+
+// Simular recepción de datos y verificación de integridad
+$datos_recibidos = "Hola, mundo";
+$hash_recibido = hash('sha256', $datos_recibidos);
+
+echo "Hash recibido: $hash_recibido <br>";
+
+// Verificar integridad
+if (hash_equals($hash, $hash_recibido)) {
+    echo "Los hashes coinciden. Los datos no han sido modificados. <br>";
+} else {
+    echo "Los hashes no coinciden. Los datos pueden haber sido modificados. <br>";
+}
+?>
