@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>   
+        <section class="contenedor">
+
+            <div name="CuadroIncidencia">
+                <h1>Atención de Incidencias</h1>
+                <form id="Incidencia" method="post" action="RegistrarIncidencia.php" onsubmit="return validarFormulario()" class="form-Incidencias">
+                    <h2 class="Inter-titulos">Agregar incidencias</h2>    
+                <fieldset>
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Título de la incidencia" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label for="opciones">Selecciona una opción:</label>
+                        
+                        <label for="Nombre">Asignar: </label>
+                        <select id="Nombre" name="Nombre" required>
+                            <option value="null"></option>';        
+                            <option value="' . htmlspecialchars($nombre) . '">' . htmlspecialchars($nombre) . '</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit">Cancelar</button>
+                        <button type="submit">Aceptar</button>
+                    </fieldset>                                    
+                    
+                </form>
+            </div>  
+        </section>  
+    </main>
+</body>
+</html>

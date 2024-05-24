@@ -9,6 +9,7 @@
 body {
     margin: 0;
     font-family: "Roboto Flex", sans-serif;
+    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -72,6 +73,9 @@ header {
 
 }
 
+.gap20 {
+  margin-left: 20px;
+}
 
 /* Botonos tarea asignadas*/
 .top-bar{
@@ -209,4 +213,23 @@ header {
     border: 1px #6E6E6E solid;
     border-radius: 10px 10px 20px 20px;
     padding: 20px;
+  }
+
+  /* Form Incidencias*/
+
+  .form-Incidencias {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    
+
+
+    h2 {
+      text-align: center;
+    }
+    fieldset{
+      border: none;
+      display: flex;
+      flex-direction: column;
+    }
   }
