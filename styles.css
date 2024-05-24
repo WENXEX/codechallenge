@@ -254,6 +254,6 @@ header {
   }
 
  textarea:focus {
-  outline: none;
-  border-bottom: 1px #14213d solid;
+    outline: none;
+    border-bottom: 1px #14213d solid;
   }
