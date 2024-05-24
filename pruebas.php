@@ -76,7 +76,21 @@
 
 <?php
 // Datos originales
-$datos_originales = "Hola, mundo";
+$datos_originales = "gato";
+
+// Generar hash utilizando el algoritmo SHA-256
+$hash = hash('sha256', $datos_originales);
+
+echo "Hash generado: $hash <br>";
+
+$datos_originales = "perro";
+
+// Generar hash utilizando el algoritmo SHA-256
+$hash = hash('sha256', $datos_originales);
+
+echo "Hash generado: $hash <br>";
+
+$datos_originales = "pato";
 
 // Generar hash utilizando el algoritmo SHA-256
 $hash = hash('sha256', $datos_originales);

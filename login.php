@@ -13,12 +13,10 @@
             <input type="text" name="nombre" placeholder="Ingresa tu usuario" required>
           </div>
 
-
           <div class="contrasena">
             <label>Contraseña:</label>
             <input type="password" name="contrasena" required>
           </div>
-
 
         </fieldset>
 
