@@ -12,22 +12,29 @@
         
         <label for="opciones">Selecciona una opción:</label>
 
-        
-        <?php require ('conexion.php');
-                $sql = "SELECT Nombre FROM coordinadores";
-                $result = $conexion->query($sql);
-                
-                if ($result->rowCount() > 0) {
-                    echo '<label for="Nombre">Asignar: </label>';
-                    echo '<select id="Nombre" name="Nombre" required>';
-                    echo '<option value="null"></option>'; 
-                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                        $nombre = $row['nombre'];
-                        echo '<option value="' . $nombre . '</option>';
-                    }
-                    echo '</select>';}?>
+        <?php
+require('conexion.php');
 
-
+try {
+    $sql = "SELECT Nombre FROM coordinadores";
+    $result = $conexion->query($sql);
+    if ($result && $result->rowCount() > 0) {
+        echo '<label for="Nombre">Asignar: </label>';
+        echo '<select id="Nombre" name="Nombre" required>';
+        echo '<option value="null"></option>';        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $nombre = $row['Nombre']; 
+            echo '<option value="' . htmlspecialchars($nombre) . '">' . htmlspecialchars($nombre) . '</option>';
+        }
+        echo '</select>';
+    } else {
+        echo "No se encontraron resultados.";
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+                        
         
         <button type="submit">Cancelar</button>
         <button type="submit">Aceptar</button>
@@ -40,11 +47,11 @@
             var descripcion = document.getElementById("descripcion").value;
             var coordinador = document.getElementById("opciones").value;
 
-            if (numeroPersonas !== "null" && horaProgramada !== 'null' && comboPlatillos !== 'null') {
+            if (titulo !== "null" && descripcion !== 'null' && coordinador !== 'null') {
                 var formData = new FormData();
-                formData.append("numeroPersonas", numeroPersonas);
-                formData.append("horaProgramada", horaProgramada);
-                formData.append("comboPlatillos", comboPlatillos);
+                formData.append("Titulo", titulo);
+                formData.append("Descripcion", descripcion);
+                formData.append("Coordinador", coordinador);
 
                 <?php
                 
