@@ -4,7 +4,7 @@ document.getElementById('Incidencia').addEventListener('submit', function(event)
     const form = document.getElementById('Incidencia');
     const formData = new FormData(form);
 
-    fetch('RegistrarIncidencia.php', {
+    fetch('src/php/RegistrarIncidencia.php', {
         method: 'POST',
         body: formData
     })
