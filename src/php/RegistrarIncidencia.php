@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/php/db_connection.php';
+require_once 'db_connection.php';
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
