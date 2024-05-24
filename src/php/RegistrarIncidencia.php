@@ -1,7 +1,7 @@
 <?php
 session_start();
-    $id_usuario = 3/*$_SESSION["id_usuario"]*/;
-
+// Reemplaza con $_SESSION["id_usuario"] una vez que la autenticación esté lista
+$id_usuario = 3; 
 
 header("Content-Type: application/json");
 
@@ -57,4 +57,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['status' => 'error', 'message' => 'Método no soportado']);
 }
 ?>
-
