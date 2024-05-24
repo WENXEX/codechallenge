@@ -9,7 +9,6 @@
 body {
     margin: 0;
     font-family: "Roboto Flex", sans-serif;
-    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -73,9 +72,6 @@ header {
 
 }
 
-.gap20 {
-  margin-left: 20px;
-}
 
 /* Botonos tarea asignadas*/
 .top-bar{
@@ -215,21 +211,25 @@ header {
     padding: 20px;
   }
 
-  /* Form Incidencias*/
-
-  .form-Incidencias {
-    margin: 0 auto;
-    width: 80%;
-    max-width: 1200px;
-    
 
 
-    h2 {
-      text-align: center;
-    }
-    fieldset{
-      border: none;
-      display: flex;
-      flex-direction: column;
-    }
-  }
+ /* Agrega tu estilo aquí */
+.dn1, .dn2 {
+  display: none;
+}
+
+.btn1 {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
