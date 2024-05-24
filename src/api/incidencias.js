@@ -1,7 +1,7 @@
 document.getElementById('Incidencia').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const form = document.getElementById('Incidencia');
+    const form = document.getElementsByClassName('enviar-incidencia');
     const formData = new FormData(form);
 
     fetch('src/php/RegistrarIncidencia.php', {
