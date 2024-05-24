@@ -1,9 +1,5 @@
 <?php
-// Configuración de la conexión a la base de datos
-$servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "tu_base_de_datos";
+include 'src/php/db_connection.php';
 
 $response = array();
 
