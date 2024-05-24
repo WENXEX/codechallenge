@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
 
-        $uploadFileDir = '.public/image/';
+        $uploadFileDir = 'public/image/';
         $dest_path = $uploadFileDir . $newFileName;
 
         if (move_uploaded_file($fileTmpPath, $dest_path)) {
