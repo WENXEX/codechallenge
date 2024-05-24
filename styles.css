@@ -213,8 +213,7 @@ header {
 
 
 
-<<<<<<< HEAD
- /* Agrega tu estilo aquí */
+
 .dn1, .dn2 {
   display: none;
 }
@@ -234,7 +233,6 @@ header {
 .content.active {
   display: block;
 }
-=======
     h2 {
       text-align: center;
     }
@@ -243,7 +241,6 @@ header {
       display: flex;
       flex-direction: column;
     }
-  }
 
   .contenedor {
     margin: 0 auto;
@@ -268,4 +265,3 @@ header {
     outline: none;
     border-bottom: 1px #14213d solid;
   }
->>>>>>> dfedd1e6dfd9d24c68be3aa8d1165eff1cea3f33
