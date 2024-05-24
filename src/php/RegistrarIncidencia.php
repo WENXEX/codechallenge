@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo = new PDO($dsn, $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO incidencias (titulo, descripcion, estado, archivo, id_usuario) VALUES (:titulo, :descripcion, :archivo, :id_usuario)";
+        $sql = "INSERT INTO incidencias (titulo, descripcion, archivo,fecha,id_estado, id_usuario) VALUES (:titulo, :descripcion, :archivo,now(),1, :id_usuario)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
         $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
