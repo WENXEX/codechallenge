@@ -1,60 +1,52 @@
 <?php
-session_start();
-    $id_usuario = 3/*$_SESSION["id_usuario"]*/;
+require 'db_connection.php';
 
+require_once 'db_connection.php';
 
-header("Content-Type: application/json");
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Verificar si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener los datos del formulario
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $archivo = '';
+    $archivo_nombre = $_FILES['archivo']['name'];
+    $archivo_temporal = $_FILES['archivo']['tmp_name'];
+    $ruta_archivo = 'public/' . $archivo_nombre; // Ruta donde se guardará el archivo
 
-    if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK) {
-        $fileTmpPath = $_FILES['archivo']['tmp_name'];
-        $fileName = $_FILES['archivo']['name'];
-        $fileSize = $_FILES['archivo']['size'];
-        $fileType = $_FILES['archivo']['type'];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
+    // Mover el archivo a la carpeta deseada
+    move_uploaded_file($archivo_temporal, $ruta_archivo);
 
-        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-
-        $uploadFileDir = './uploaded_files/';
-        $dest_path = $uploadFileDir . $newFileName;
-
-        if (move_uploaded_file($fileTmpPath, $dest_path)) {
-            $archivo = $newFileName;
-        } else {
-            $response = ['status' => 'error', 'message' => 'Error al mover el archivo subido'];
-            echo json_encode($response);
-            exit();
-        }
-    }
-
-    require 'db_connection.php';
     try {
-        $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO incidencias (titulo, descripcion, estado, archivo, id_usuario) VALUES (:titulo, :descripcion, 1, :archivo, :id_usuario)";
+        // Preparar la consulta SQL para insertar datos en la tabla incidencias
+        $sql = "INSERT INTO incidencias (titulo, descripcion, Archivo, fecha, id_estado, id_usuario) 
+                VALUES (:titulo, :descripcion, :archivo, NOW(), :id_estado, :id_usuario)";
+        
+        // Preparar la sentencia
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
-        $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
-        $stmt->bindParam(':archivo', $archivo, PDO::PARAM_STR);
-        $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_STR);
-
-        if ($stmt->execute()) {
-            $response = ['status' => 'success', 'message' => 'Incidencia registrada exitosamente'];
-        } else {
-            $response = ['status' => 'error', 'message' => 'Error al registrar la incidencia'];
-        }
+        
+        // Bind de los parámetros
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':descripcion', $descripcion);
+        $stmt->bindParam(':archivo', $ruta_archivo);
+        // Aquí debes definir id_estado e id_usuario según tu lógica de negocio
+        $id_estado = 1; // Por ejemplo, asumiendo que el estado inicial es 1
+        $id_usuario = 1; // Por ejemplo, asumiendo que el usuario actual tiene id 1
+        $stmt->bindParam(':id_estado', $id_estado);
+        $stmt->bindParam(':id_usuario', $id_usuario);
+        
+        // Ejecutar la sentencia
+        $stmt->execute();
+        
+        // Establecer la respuesta como éxito
+        $response['success'] = true;
+        $response['message'] = "La incidencia se ha agregado correctamente.";
     } catch (PDOException $e) {
-        $response = ['status' => 'error', 'message' => 'Error: ' . $e->getMessage()];
+        // Manejar errores de la base de datos
+        $response['success'] = false;
+        $response['error'] = "Error al insertar la incidencia: " . $e->getMessage();
     }
-
-    echo json_encode($response);
-} else {
-    echo json_encode(['status' => 'error', 'message' => 'Método no soportado']);
 }
-?>
 
+// Devolver la respuesta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
+?>

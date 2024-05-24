@@ -295,7 +295,7 @@ tr {
 .conten {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr) 40px;
   justify-items: center;
   width: 100%;
   border: 1px #4E4E4E solid;
@@ -408,4 +408,16 @@ tr {
 
 .gap20 {
   margin-left: 20px;
+}
+
+.descargar {
+  height: 100%;
+}
+
+.descargar:hover {
+  fill: #3076e0;
+}
+
+.descargar:active {
+  fill: #0004ff;
 }

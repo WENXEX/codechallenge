@@ -98,30 +98,11 @@ if (hash_equals($hash, $hash_recibido)) {
 ?>
 
 
-<?php
-session_start();
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
-} else {
-  $id = 1;
-}
-if (!isset($_SESSION['nombre'])) {
-} else {
-  $usuarioActivo = $_SESSION['nombre'];
-  $contrasena = $_SESSION['contrasena'];
-  $id_usuario = $_SESSION['id_usuario'];
-}
-?>
+
 
 <?php
 
-session_start();
-if (!isset($_SESSION['correo'])) {
-        header("Location: Iniciar_Sesion.php");
-} else {
-        $usuario = $_SESSION["correo"];
-        $usuario_id = $_SESSION["user_id"];
-}
+
 include 'db_connection.php';
 
 try {

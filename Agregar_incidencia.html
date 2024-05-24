@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="src/api/incidencias.js"></script>
     <title>Document</title>
 </head>
 <header>
@@ -19,17 +18,15 @@
         <h1 class="Inter-titulos centrado">Atención de Incidencias</h1>
         <section class="contenedor">
             <div name="CuadroIncidencia">
-                <form id="Incidencia" method="post" action="" class="form-Incidencias">
+                <form id="Incidencia" class="form-Incidencias">
                     <h2 class="Inter-titulos">Agregar incidencias</h2>
                     <fieldset>
                         <label for="titulo">Título:</label>
-                        <input class="input-style" type="text" id="titulo" name="titulo"
-                            placeholder="Título de la incidencia" required>
+                        <input class="input-style" type="text" id="titulo" name="titulo" placeholder="Título de la incidencia" required>
                     </fieldset>
                     <fieldset>
                         <label for="descripcion">Descripción:</label>
-                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50"
-                            placeholder="Descripción de la incidencia" required></textarea>
+                        <textarea class="textarea-estilos" id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Descripción de la incidencia" required></textarea>
                     </fieldset>
 
                     <label>Evidencia:</label>
@@ -50,13 +47,50 @@
                         </div> 
                     </div>  
                     <div class="esotilin">
-                        <button  class="btn-azul" type="submit">Cancelar</button>
+                        <button class="btn-azul" type="button" onclick="cancelar()">Cancelar</button>
                         <button id="enviar-incidencia" class="btn-azul" type="submit">Aceptar</button>
-                    </div>             
+                    </div>
                 </form>
+            
             </div>
         </section>
     </main>
 </body>
+<script>
+    
+        document.getElementById('Incidencia').addEventListener('submit', function(event) {
+            event.preventDefault();
+            enviarFormulario();
+        });
 
+        function enviarFormulario() {
+            const form = document.getElementById('Incidencia');
+            const formData = new FormData(form);
+
+            fetch('src/php/RegistrarIncidencia.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Incidencia enviada correctamente.');
+                } else {
+                    alert('Error al enviar la incidencia: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function cancelar() {
+            // Implementa la funcionalidad de cancelar si es necesario
+            alert('Cancelado');
+        }
+    </script>
+</body>
+</html>
+
+</script>
 </html>
