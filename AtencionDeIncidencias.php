@@ -19,6 +19,9 @@
     </form>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            verIncidencias();
+        });
         document.getElementById("form-incidencia").addEventListener("submit", function(event) {
             event.preventDefault(); 
             

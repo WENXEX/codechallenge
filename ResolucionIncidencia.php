@@ -35,8 +35,7 @@
                 <p><strong>Nombre:</strong> María González</p>
                 <p><strong>Descripción:</strong> Fusce sit amet ultrices velit, et efficitur dui. Nullam sed tortor sed ligula ultrices sollicitudin.</p>
             </div>
-            <!-- Agregar más elementos según sea necesario -->
-        </div>
+            
     </div>
     <style>
         body {
