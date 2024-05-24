@@ -14,7 +14,7 @@
           </div>
 
 
-          <div class="contra">
+          <div class="contrasena">
             <label>Contraseña:</label>
             <input type="password" name="contrasena" required>
           </div>
@@ -22,13 +22,9 @@
 
         </fieldset>
 
-        <div class="dos">
-          <div class="bor">
-            <button type="submit"><a href="Registro.php" class="re-bo">Registrarse</a></button>
-          </div>
-          <div class="envi">
-            <input type="submit" name="submit" value="Iniciar Sesion">
-          </div>
+        <div class="esotilin">
+            <button class="btn-azul" type="button" onclick="cancelar()">Cancelar</button>
+            <button id="enviar-login" class="btn-azul" type="submit">Aceptar</button>
         </div>
       </form>    
 
