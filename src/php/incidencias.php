@@ -2,11 +2,11 @@
 include 'db_connection.php';
 try {
     
-        $sql = "SELECT p.*, c.cantidad, c.total 
-            FROM carrito_compras c 
+        $sql = "SELECT p.*, c.nombre, c.total 
+            FROM revision c 
             INNER JOIN incidencias p 
-            ON c.producto_id = p.id 
-            WHERE c.usuario_id = :id";
+            ON c.id_incidencia = p.id 
+            WHERE c.coordinador = :id";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':id', $usuario_id);
         $stmt->execute();
