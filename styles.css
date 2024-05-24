@@ -212,7 +212,7 @@ header {
   }
 
   .div-gap > a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
   }
   /*Login*/
