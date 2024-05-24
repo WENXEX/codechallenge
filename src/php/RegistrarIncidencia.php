@@ -1,7 +1,7 @@
 <?php
 session_start();
-    $id_usuario = 3/*$_SESSION["id_usuario"]*/;
-
+// Reemplaza con $_SESSION["id_usuario"] una vez que la autenticación esté lista
+$id_usuario = 3; 
 
 header("Content-Type: application/json");
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
 
-        $uploadFileDir = 'public/image/';
+        $uploadFileDir = '.public/image/';
         $dest_path = $uploadFileDir . $newFileName;
 
         if (move_uploaded_file($fileTmpPath, $dest_path)) {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo = new PDO($dsn, $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO incidencias (titulo, descripcion, estado, archivo, id_usuario) VALUES (:titulo, :descripcion, 1, :archivo, :id_usuario)";
+        $sql = "INSERT INTO incidencias (titulo, descripcion, estado, archivo, id_usuario) VALUES (:titulo, :descripcion, :archivo, :id_usuario)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
         $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
@@ -57,4 +57,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['status' => 'error', 'message' => 'Método no soportado']);
 }
 ?>
-
