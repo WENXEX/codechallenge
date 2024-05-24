@@ -60,24 +60,24 @@ $tareas = obtenerTareas($conexion);
             <?php if (!empty($tareas)): ?>
                 <?php foreach ($tareas as $tarea): ?>
                     <div class="div-gap">
-                        <a href="DescripcioIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
+                        <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
                             <?php echo htmlspecialchars($tarea['estado']); ?>
                         </a>
                     </div>
                     <div class="div-gap">
-                        <a href="DescripcioIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
+                        <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
                             <?php echo htmlspecialchars($tarea['titulo']); ?>
                         </a>
                         <span class="gray-separator"></span>
                     </div>
                     <div class="div-gap">
-                        <a href="DescripcioIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
+                        <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
                             <?php echo htmlspecialchars($tarea['fecha']); ?>
                         </a>
                         <span class="gray-separator"></span>
                     </div>
                     <div class="div-gap">
-                        <a href="DescripcioIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
+                        <a href="DescripcionIncidencia.php?id=<?php echo htmlspecialchars($tarea['id']); ?>" class="Roboto-Flex-regular padding-text">
                             <?php echo htmlspecialchars($tarea['coordinador']); ?>
                         </a>
                         <span class="gray-separator"></span>
