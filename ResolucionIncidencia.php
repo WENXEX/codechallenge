@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="container">
+    <div class="Titulo">
+            <h2>Titulo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero eget accumsan ultrices. Duis mattis aliquam diam, ac commodo libero finibus non. In hac habitasse platea dictumst.</p>
+        </div>
         <div class="descripcion">
             <h2>Descripción de la Incidencia</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero eget accumsan ultrices. Duis mattis aliquam diam, ac commodo libero finibus non. In hac habitasse platea dictumst.</p>
@@ -15,6 +19,10 @@
         <div class="descripcion">
             <h2>Ultima descrpcion de la solucion</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero eget accumsan ultrices. Duis mattis aliquam diam, ac commodo libero finibus non. In hac habitasse platea dictumst.</p>
+        </div>
+        <div class="Estato">
+            <h2>Estado</h2>
+            <p>Activo</p>
         </div>
 
         <div class="solucion">
